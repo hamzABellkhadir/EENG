@@ -1,0 +1,60 @@
+<html>
+<h2>Réclamation</h2>
+<label class="alert alert-warning" role="alert" >
+  Modifier les données
+</label>
+<form [formGroup]="serviceDoc.formreclamation" class="normal-form" >
+
+  <mat-grid-list cols="2" rowHeight="350px">
+
+    <mat-grid-tile>
+
+
+
+      <div class="controles " style="margin-top: 0px; margin-right: 2%;  margin-left: 9%;">
+
+
+
+        <mat-form-field >
+          <input formControlName="typerecl" style="width: 10px"  matInput  placeholder="Type de réclamation*" >
+          <mat-hint align="end">Profile(adresse)/...</mat-hint>
+        </mat-form-field><br>
+
+
+        <mat-form-field >
+          <input formControlName="avantrecl"  matInput  placeholder="Avant modification" >
+        </mat-form-field><br>
+
+
+      </div>
+
+
+    </mat-grid-tile>
+
+
+    <mat-grid-tile>
+      <div class="controles "  style="margin-top: 4%; margin-left: 2%;margin-right: 9%;">
+
+        <mat-form-field >
+          <textarea style="width: 100%"  matInput formControlName="justification"
+                    id="exampleFormControlTextarea1" placeholder="Justification*" rows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field >
+          <input formControlName="apresrecl"  matInput  placeholder="Aprés modification*" >
+        </mat-form-field><br>
+
+        <div class="button-row">
+          <button mat-raised-button color="primary"  (click)="ajouter_recl()" [disabled]="serviceDoc.formreclamation.invalid">Envoyer</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Supprimer</button>
+        </div>
+
+      </div>
+
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
+</html>
+
+

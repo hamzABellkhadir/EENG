@@ -1,0 +1,58 @@
+div, div{
+  max-width: 950px;
+  min-width: 350px;
+}
+
+
+.aa{
+
+  width: auto;
+  text-align: center;
+}
+
+.mat-card{
+  max-width: 750px;
+
+  height: 400px;
+  margin: 10px auto;
+
+
+}
+
+
+.mat-card-avatar{
+  background-size: cover;
+  margin-bottom: 10px;
+}
+
+
+mat-card-content{
+  font-size: 19px;
+}
+
+div .pho{
+  border-radius: 200px;
+  margin: 10px;
+}
+
+
+
+
+.di{
+  height: 150px;
+  width: 100px;
+  float: left;
+
+}
+
+@media only screen and (max-width: 800px) {
+  .mat-card {
+    width: 350px;
+    height: 600px;
+  }
+}
+
+
+span{
+  margin-left: 10px;
+}

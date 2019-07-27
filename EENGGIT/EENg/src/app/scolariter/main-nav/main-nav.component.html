@@ -1,0 +1,92 @@
+
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <mat-list>
+        <mat-list-item routerLink="" > <mat-icon color="primary"> home</mat-icon> Accueil </mat-list-item>
+
+        <mat-list-item routerLink="AttestetionDescolarite" (click)="number_rl()"  >
+          <mat-icon color="primary" *ngIf="count_att?.length !== 0" matBadge={{count_att?.length}}  matBadgeColor="accent"> insert_drive_file</mat-icon>
+          <mat-icon color="primary" *ngIf="count_att?.length == 0" > insert_drive_file</mat-icon>
+          Attestation de scolarité</mat-list-item>
+
+
+        <mat-list-item routerLink="releveDeNote" (click)="number_rl()">
+          <mat-icon color="primary"  *ngIf="count_rdn?.length !== 0"  matBadge={{count_rdn?.length}}  matBadgeColor="accent" > insert_drive_file</mat-icon>
+          <mat-icon color="primary" *ngIf="count_rdn?.length == 0" > insert_drive_file</mat-icon>
+          Relevé des notes </mat-list-item>
+
+
+        <mat-list-item routerLink="demandeDuDiplome" (click)="number_rl()" >
+          <mat-icon color="primary" *ngIf="count_ddd?.length !== 0"  matBadge={{count_ddd?.length}}  matBadgeColor="accent"> insert_drive_file</mat-icon>
+          <mat-icon color="primary" *ngIf="count_ddd?.length == 0" > insert_drive_file</mat-icon>
+          Demande de diplôme </mat-list-item>
+
+
+
+        <mat-list-item routerLink="demandeDeStage" (click)="number_rl()">
+          <mat-icon color="primary" *ngIf="count_dds?.length !== 0" matBadge={{count_dds?.length}}  matBadgeColor="accent">insert_drive_file</mat-icon>
+          <mat-icon color="primary" *ngIf="count_dds?.length == 0" > insert_drive_file</mat-icon>
+          Demande de stage</mat-list-item>
+
+
+
+        <mat-list-item routerLink="conventionDeStage" (click)="number_rl()">
+          <mat-icon color="primary" *ngIf="count_cds?.length !== 0"  matBadge={{count_cds?.length}}  matBadgeColor="accent" > insert_drive_file </mat-icon>
+          <mat-icon color="primary" *ngIf="count_cds?.length == 0" > insert_drive_file</mat-icon>
+          Convention de stage </mat-list-item>
+
+      </mat-list>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <img src="../../assets/img/old.png" class="logo img-fluid mx-auto d-block mb-3" alt="">
+
+      <span class="ppp">Espace Etudiant</span>
+      <span class="spacer"></span>
+      <img mat-fab [matMenuTriggerFor]="menu" class="mmm clickcable" *ngIf="x?.image!==null" src="../../../assets/img/{{x?.image}}">
+      <img mat-fab [matMenuTriggerFor]="menu" class="mmm clickcable" *ngIf="x?.image==null" src="../../../assets/img/default.png">
+
+
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['profileScolarite']">
+          <mat-icon color="primary">account_circle</mat-icon>
+          <span>Profile</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon color="primary">exit_to_app</mat-icon>
+          <span>Déconnection</span>
+        </button>
+      </mat-menu>
+
+
+
+    </mat-toolbar>
+
+    <!-- Add Content Here -->
+    <br>
+
+    <main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+      <router-outlet #o="outlet"></router-outlet>
+    </main>
+
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

@@ -1,0 +1,32 @@
+.float{
+  width: 50%;
+
+}
+
+.alert{
+
+  margin:10px;
+  text-align: center;
+}
+
+h2{
+  margin: 10px;
+}
+
+button{
+  margin-top: 10px;
+}
+
+html{
+  background-color:#f9f9f9;
+  text-align: center;
+}
+
+div textarea{
+  width: 300px;
+}
+
+textarea:focus{
+  background-color: white;
+}
+

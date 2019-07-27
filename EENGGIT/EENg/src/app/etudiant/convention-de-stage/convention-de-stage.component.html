@@ -1,0 +1,77 @@
+<html>
+<h2>Convention de Stage</h2>
+<label class="alert alert-warning" role="alert" >
+ Vous consulter vos documents qu'aprés trois jours de demande au bureau de stage
+</label>
+<form [formGroup]="serviceDoc.form" class="normal-form" >
+  <mat-grid-list cols="2" rowHeight="400px">
+
+    <mat-grid-tile>
+
+
+    <div class="controles " style="margin-top: 0px; margin-right: 2%;  margin-left: 9%;">
+
+
+
+      <mat-form-field >
+        <input formControlName="nom_entre"  matInput  placeholder="Nom d'entreprise*" >
+        <mat-hint align="end">CHU/Colaimo/...</mat-hint>
+      </mat-form-field><br>
+
+      <mat-form-field >
+        <input formControlName="date_debut_stage"  [matDatepicker]="picker"   matInput placeholder="Date debut du stage*" >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field><br>
+
+      <mat-form-field >
+        <input formControlName="dureestage"  matInput  placeholder="durée de stage*" >
+        <mat-hint align="end">2 mois/...</mat-hint>
+      </mat-form-field><br>
+
+      <mat-form-field >
+        <input formControlName="email"  matInput  placeholder="Adresse Email*" >
+        <mat-hint align="end">Email</mat-hint>
+        <mat-error>Email invalide</mat-error>
+      </mat-form-field><br>
+
+
+    </div>
+
+
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="controles "  style="margin-top: 12%; margin-left: 2%;margin-right: 9%;">
+
+        <mat-form-field >
+          <input formControlName="nom_projet"  matInput  placeholder="Nom du projet*" >
+        </mat-form-field><br>
+
+        <mat-form-field >
+          <input formControlName="ville_entre"  matInput  placeholder="Ville d'entreprise*" >
+          <mat-hint align="end">Oujda/...</mat-hint>
+
+        </mat-form-field><br>
+
+        <mat-form-field >
+          <input formControlName="tel_entre"  matInput  placeholder="Tel entreprise*" >
+          <mat-error *ngIf="serviceDoc.form.controls['tel_entre'].errors?.minlength">minimum 10 caractère</mat-error>
+          <mat-hint align="end">06**/05**</mat-hint>
+        </mat-form-field><br>
+
+        <div class="button-row">
+          <!-- [disabled]="serviceDoc.form.invalid" -->
+          <button mat-raised-button color="primary"  (click)="ajouter_cenvention()" [disabled]="serviceDoc.form.invalid">Envoyer</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Supprimer</button>
+        </div>
+
+      </div>
+
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
+</html>
+
+

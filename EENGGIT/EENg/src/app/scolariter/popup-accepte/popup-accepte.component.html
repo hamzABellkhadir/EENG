@@ -1,0 +1,20 @@
+<mat-list role="list">
+
+  <mat-list-item role="listitem"><span style="color:#00008B" class=" border-bottom divi"><b>№ Apogé:</b></span> <span>{{y?.n_apogee}}</span> </mat-list-item>
+  <mat-list-item role="listitem"><span style="color:#00008B" class=" border-bottom "><b>Nom et Prenom: </b></span><span>{{y?.nom}} {{y?.prenom}}</span></mat-list-item>
+  <mat-list-item role="listitem"><span style="color:#00008B" class=" border-bottom "><b>Département: </b></span><span>{{y?.dapartement}} </span></mat-list-item>
+  <mat-list-item role="listitem"><span style="color:#00008B" class=" border-bottom "><b>Filière:</b></span> <span class="text-uppercase">  {{y?.filiere}}</span> </mat-list-item>
+  <mat-list-item role="listitem"><span style="color:#00008B" class=" border-bottom "><b>Justification:</b></span> <span>  {{x?.justification}}</span></mat-list-item>
+  <mat-list-item role="listitem"><span style="color:#00008B" class=" border-bottom "><b>Date de demande:</b></span><span>  {{x?.date_env}}</span></mat-list-item>
+
+</mat-list>
+
+<div style="float: right" class="button-row">
+  <button style="background-color:#30db6b;"  mat-raised-button (click)="update_doc()"  color="primary">
+    Valider
+  </button>
+
+  <button  (click)="annuler()" mat-raised-button color="warn">
+    Annuler
+  </button>
+</div>

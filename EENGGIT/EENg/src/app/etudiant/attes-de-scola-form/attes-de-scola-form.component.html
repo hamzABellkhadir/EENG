@@ -1,0 +1,29 @@
+<html>
+  <h2>Attestation de scolarité</h2>
+  <label class="alert alert-warning" role="alert" >
+    Attention on ne peut demander une attestation de scolarité qu'une fois!!
+  </label>
+  <form [formGroup]="service_att.formAttestationsco" class="normal-form" >
+
+  <div style=" margin: 10px;" class="mx-auto  float container">
+    <div class="controles">
+
+    <mat-form-field >
+    <textarea style="width: 100%" class="form-control" matInput formControlName="justification"
+              id="exampleFormControlTextarea1" placeholder="Justification*" rows="3"></textarea>
+      <mat-hint align="end">Pourquoi voulez vous ce document?</mat-hint>
+    </mat-form-field>
+
+
+
+
+    <div class="button-row">
+      <button mat-raised-button color="primary"  (click)="ajouter_att()" [disabled]="service_att.formAttestationsco.invalid">Envoyer</button>
+      <button mat-raised-button color="warn" (click)="onClear()">Supprimer</button>
+    </div>
+    </div>
+    </div>
+  </form>
+</html>
+
+//[(ngModel)]="att.justification"     (click)="ajouter_ADS()"

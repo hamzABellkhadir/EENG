@@ -1,0 +1,19 @@
+
+<span style="font-size: 40px ; margin-left: 10px" class="lead">Attestation de scolarité</span>
+<mat-tab-group mat-align-tabs="center" >
+  <mat-tab  label="Nouvelle demandes">
+    <ng-template matTabContent>
+      <app-tous-dmd-att></app-tous-dmd-att>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Demandes acceptées">
+    <ng-template matTabContent>
+      <app-accepte-att></app-accepte-att>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Demandes refusées">
+    <ng-template matTabContent>
+      <app-refuse-att></app-refuse-att>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

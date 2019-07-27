@@ -1,0 +1,31 @@
+<html>
+<h2>Demande de diplôme </h2>
+<label class="alert alert-warning" role="alert" >
+  Attention on ne peut demander son diplôme qu'une fois!!
+</label>
+<form [formGroup]="serviceDoc.formdiplome" class="normal-form" >
+  <div style="margin: 10px;" class="mx-auto float container" >
+
+    <div class="controles">
+
+      <mat-form-field >
+        <input formControlName="type_diplome"   matInput placeholder="Type diplôme*" >
+        <mat-hint align="end">DUT/BTS/...</mat-hint>
+      </mat-form-field><br>
+
+      <mat-form-field>
+  <textarea  matInput class="form-control"  formControlName="justification"
+            id="exampleFormControlTextarea1" placeholder="Justification*" rows="3"></textarea>
+        <mat-hint align="end">Veuillez justifier votre demande...</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="button-row">
+      <button mat-raised-button color="primary"  (click)="ajouter_deamandedpl()" [disabled]="serviceDoc.formdiplome.invalid">Envoyer</button>
+      <button mat-raised-button color="warn" (click)="onClear()">Supprimer</button>
+    </div>
+
+  </div>
+</form>
+</html>
+
+

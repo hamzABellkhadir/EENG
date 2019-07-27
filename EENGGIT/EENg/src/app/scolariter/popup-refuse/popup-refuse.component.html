@@ -1,0 +1,30 @@
+
+
+<html>
+<h2>Justification du refus</h2>
+
+<form [formGroup]="formservice.formAttestationsco" class="normal-form" >
+
+  <div style=" margin: 10px;" class="mx-auto  float container">
+    <div class="controles">
+
+      <mat-form-field >
+    <textarea style="width: 100%" class="form-control" class="form-control" matInput formControlName="justification_refus"
+              id="exampleFormControlTextarea1" placeholder="justification de refus*" rows="3"></textarea>
+      </mat-form-field>
+
+
+
+
+      <div class="button-row">
+        <button mat-raised-button color="primary" (click)="update_doc()" [disabled]="formservice.formAttestationsco.invalid">Envoyer</button>
+
+        <button (click)="annuler()" mat-raised-button  color="warn">
+          Annuler
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+</html>
+

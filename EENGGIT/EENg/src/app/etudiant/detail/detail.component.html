@@ -1,0 +1,11 @@
+<h4 mat-dialog-title>Plus de détail</h4>
+<div mat-dialog-content>
+votre demande est:
+      <span style="color: #ff1a00" *ngIf="x?.status=== 'refusé' ">{{x?.status}} le {{x?.date_refus}}</span>
+      <span style="color: #919191" *ngIf="x?.status=== 'encoure' ">encours de traitement</span>
+      <span style="color: yellowgreen" *ngIf="x?.status=== 'accepté' ">{{x?.status}}</span>
+  <br>
+  <p *ngIf=" x?.justification_refus != null " class="alert alert-danger aa" role="alert">
+    {{x?.justification_refus}}
+  </p>
+</div>

@@ -1,0 +1,37 @@
+
+<mat-table [dataSource]="dataSource" matSort matSortActive="date_env" matSortDirection="asc" class="mat-elevation-z8">
+
+  <ng-container class="matt" matColumnDef="etudiantid">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Numéro apogée</mat-header-cell>
+    <mat-cell *matCellDef="let docc">{{docc.etudiantid}}</mat-cell>
+  </ng-container>
+
+
+  <ng-container class="matt" matColumnDef="date_env">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Date de demande</mat-header-cell>
+    <mat-cell *matCellDef="let docc">{{docc.date_env}}</mat-cell>
+  </ng-container>
+
+
+  <ng-container class="matt" matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef> Plus de détails </mat-header-cell>
+    <mat-cell *matCellDef="let docc">
+      <div class="button-row">
+        <button  mat-raised-button color="primary">
+          Accepter
+        </button>
+
+        <button  mat-raised-button color="warn">
+          Refuser
+        </button>
+      </div>
+    </mat-cell>
+  </ng-container>
+
+
+
+  <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+  <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+
+</mat-table>
+

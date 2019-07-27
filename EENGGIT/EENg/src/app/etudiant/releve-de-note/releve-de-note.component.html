@@ -1,0 +1,36 @@
+<html>
+<h2>Relevé des notes</h2>
+<label class="alert alert-warning" role="alert" >
+  Attention on ne peut demander un relevé de notes qu'une fois!!
+</label>
+<form [formGroup]="serviceDoc.formRelveNote" class="normal-form" >
+<div style="margin: 10px;" class="mx-auto float container" >
+
+  <div class="controles">
+
+  <mat-form-field >
+  <input formControlName="annee_universitaire"   matInput placeholder="Année universitaire*" >
+    <mat-hint align="end">2018/2019/...</mat-hint>
+  </mat-form-field><br>
+
+  <mat-form-field >
+  <input formControlName="semestre"  matInput  placeholder="Semestre*" >
+    <mat-hint align="end">S1/S2/...</mat-hint>
+
+    </mat-form-field><br>
+    <mat-form-field>
+  <textarea  matInput  class="form-control"formControlName="justification"
+            id="exampleFormControlTextarea1" placeholder="Justification*" rows="3"></textarea>
+      <mat-hint align="end">Pourquoi voulez vous ce document?</mat-hint>
+    </mat-form-field>
+  </div>
+  <div class="button-row">
+    <button mat-raised-button color="primary"  (click)="ajouter_relver()" [disabled]="serviceDoc.formRelveNote.invalid">Envoyer</button>
+    <button mat-raised-button color="warn" (click)="onClear()">Supprimer</button>
+  </div>
+
+</div>
+</form>
+</html>
+
+

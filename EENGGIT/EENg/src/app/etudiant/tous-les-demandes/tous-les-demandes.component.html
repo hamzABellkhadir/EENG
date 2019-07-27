@@ -1,0 +1,50 @@
+
+<mat-table [dataSource]="dataSource" matSort matSortActive="date_env" matSortDirection="asc" class="mat-elevation-z8">
+
+  <ng-container class="matt" matColumnDef="id_doc">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Type du document</mat-header-cell>
+    <mat-cell *matCellDef="let docc" >{{docc.id_doc}}</mat-cell>
+  </ng-container>
+
+  <ng-container class="matt" matColumnDef="typedoc">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Type du document</mat-header-cell>
+    <mat-cell *matCellDef="let docc" ><div *ngIf="docc.typedoc =='Attestation_Scolarite'"> Attestation de scolarite</div>
+    <div *ngIf="docc.typedoc =='relve_notes'"> Relvé de note</div>
+    <div *ngIf="docc.typedoc =='ConventionStage'"> Convention de stage</div>
+   <div *ngIf="docc.typedoc =='Demande_diplome'"> Demande de diplôme</div>
+    <div *ngIf="docc.typedoc =='Demande_stage'"> Demande de stage</div></mat-cell>
+
+  </ng-container>
+
+  <ng-container class="matt" matColumnDef="date_env">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Date de demande</mat-header-cell>
+    <mat-cell *matCellDef="let docc">{{docc.date_env}}</mat-cell>
+  </ng-container>
+
+  <ng-container class="matt" matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+    <mat-cell *matCellDef="let docc">{{docc.status}}</mat-cell>
+  </ng-container>
+
+  <ng-container class="matt" matColumnDef="justification_refus">
+    <mat-header-cell  *matHeaderCellDef mat-sort-header>justificatif de refus</mat-header-cell>
+    <mat-cell *matCellDef="let docc">{{docc.justification_refus}}</mat-cell>
+  </ng-container>
+
+
+  <ng-container class="matt" matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef> Plus de détails </mat-header-cell>
+    <mat-cell *matCellDef="let docc">
+      <button (click)="openDialog(docc.id_doc)" mat-raised-button color="primary">
+        détails
+      </button>
+    </mat-cell>
+  </ng-container>
+
+
+
+  <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+  <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+
+</mat-table>
+
